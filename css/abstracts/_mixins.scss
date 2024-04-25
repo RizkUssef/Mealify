@@ -1,0 +1,43 @@
+@mixin flex(
+  $direction: row,
+  $justify-content: center,
+  $align-items: center
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin grid($columns: auto, $rows: auto, $gap: 0) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    grid-gap: $gap;
+}
+
+@mixin set-grid-position($col-start:1,$col-end:1,$row-start:1,$row-end:1){
+  grid-column-start: $col-start;
+  grid-column-end: $col-end;
+  grid-row-start: $row-start;
+  grid-row-end: $row-end;
+}
+
+@mixin btn($padding-tb:8px,$padding-rl:8px,$tlr:0,$trr:0,$blr:0,$brr:0){
+  padding: $padding-tb $padding-rl;
+  text-transform: capitalize;
+  @include border-radius($tlr,$trr,$blr,$brr);
+}
+
+@mixin border-radius($tlr:0,$trr:0,$blr:0,$brr:0){
+  border-top-left-radius: $tlr;
+  border-top-right-radius: $trr;
+  border-bottom-left-radius: $blr;
+  border-bottom-right-radius: $brr;
+}

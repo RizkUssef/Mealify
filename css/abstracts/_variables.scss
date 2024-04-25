@@ -1,0 +1,44 @@
+// $breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-lg-plus: 993px;
+$breakpoint-xl: 1200px;
+$breakpoint-xl-plus: 1201px;
+$breakpoint-xxl: 2000px;
+
+$main-headline-color:#37373f;
+$main-description-color:#4f4f5a;
+$active-nav-links-color:#000000;
+$contact-title-color:#7d7d7d;
+$meal-description-color:#dddddd;
+$main-red-color:hsl(0, 84%, 44%);
+$light-red-color:hsl(0, 84%, 49%);
+$main-bg:#eeeeee;
+$contact-bg:#f5f5f5;
+$footer-bg:#0c0a0b;
+$form-border-color:#e8e3e3;
+$footer-line:#585858;
+
+
+$white-color:(
+  meal-title:#ffffff,
+  footer-text:#ffffff,
+  header-bg:#ffffff,
+  image-border:#ffffff,
+  btn-text:#ffffff,
+  white:#ffffff,
+);
+
+$taupe-gray-color: (
+  nav-links: #7f7f90,
+  section-tag: #7f7f90,
+  chef-position:#7f7f90,
+  chef-description: #7f7f90,
+);
+$eerie-black-color: (
+  chef-name: #212529,
+  section-title: #212529,
+  contact-info:#212529,
+  logo:#212529,
+  input:#212529,
+);

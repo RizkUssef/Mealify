@@ -1,0 +1,63 @@
+@import "../abstracts/mixins";
+@import "../abstracts/variables";
+@import "../base/typography";
+.book-button {
+  @include btn(10px, 25px, 0px, 25px, 25px, 25px);
+  background-color: $main-red-color;
+  &:hover {
+    background-color: $light-red-color;
+  }
+}
+.message-button {
+  @include btn(12px, 40px, 25px, 25px, 25px, 25px);
+  background-color: $main-red-color;
+  &:hover {
+    background-color: $light-red-color;
+  }
+}
+.subscribe-button {
+  @include btn(10px, 10px);
+  background-color: $main-red-color;
+  &:hover {
+    background-color: $light-red-color;
+  }
+}
+.watch-button {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  color: map-get($eerie-black-color, input);
+  @include flex();
+  gap: 8px;
+  transition: all 0.5s ease-in-out;
+  i {
+    width: 56px;
+    padding: 15px;
+    border-radius: 50%;
+    color: map-get($eerie-black-color, input);
+    font-size: $font-size-header-icon;
+    background-color: map-get($white-color, white);
+    position: relative;
+    transition: all 0.5s ease-in-out;
+    &::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      bottom: -5px;
+      right: -5px;
+      border-radius: 50%;
+      border-left: 7px solid $main-red-color;
+      border-top: 7px solid $main-red-color;
+      border-bottom: 7px solid transparent;
+      border-right: 7px solid transparent;
+      transform: rotate(-45deg);
+    }
+  }
+  &:hover {
+    color: $main-red-color;
+    i {
+      color: $main-red-color;
+    }
+  }
+}

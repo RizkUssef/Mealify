@@ -1,0 +1,201 @@
+@import "../abstracts/variables";
+@import "../base/typography";
+@import "../abstracts/mixins";
+.container {
+  width: 90%;
+  margin: auto;
+  @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+    width: 80%;
+  }
+  @media screen and (min-width: $breakpoint-lg-plus) and (max-width: $breakpoint-xxl) {
+    width: 80%;
+  }
+}
+.headline {
+  font-family: $font-headlines;
+  font-size: $font-size-extra-large;
+  font-weight: $font-weight-bold;
+  color: $main-headline-color;
+}
+.titles {
+  font-family: $font-headlines;
+  font-size: $font-size-large;
+  font-weight: $font-weight-normal;
+  color: map-get($eerie-black-color, section-title);
+  text-align: center;
+  .red-span {
+    color: $main-red-color;
+  }
+}
+.all-text-desc {
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+}
+.chef-name {
+  font-family: $font-subtitles;
+  font-size: $font-size-medium;
+  font-weight: $font-weight-bold;
+  color: map-get($eerie-black-color, chef-name);
+}
+.chef-position {
+  font-family: $font-primary;
+  font-size: $font-size-small;
+  font-weight: $font-weight-normal;
+  color: map-get($taupe-gray-color, chef-position);
+}
+.section-tag {
+  font-family: $font-subtitles;
+  font-size: $font-size-small;
+  font-weight: $font-weight-normal;
+  text-align: center;
+  color: map-get($taupe-gray-color, section-tag);
+}
+.meal-name {
+  font-family: $font-subtitles;
+  font-size: $font-size-meal-name;
+  font-weight: $font-weight-bold;
+  color: map-get($white-color, meal-title);
+}
+.contact-title {
+  font-family: $font-subtitles;
+  font-size: $font-size-contact-title;
+  font-weight: $font-weight-bold;
+  color: $contact-title-color;
+}
+.footer-title {
+  font-family: $font-subtitles;
+  font-size: $font-size-medium;
+  font-weight: $font-weight-bold;
+  color: map-get($white-color, footer-text);
+}
+button {
+  font-family: $font-primary;
+  font-size: calc($font-size-base - 1px);
+  font-weight: $font-weight-normal;
+  color: map-get($white-color, btn-text);
+}
+.round-icon {
+  padding: 20px;
+  background-color: $main-red-color;
+  border-radius: 50%;
+}
+input,
+textarea {
+  border: 2px solid $form-border-color;
+  padding: 15px;
+  color: map-get($eerie-black-color, input);
+  font-family: $font-primary;
+  font-size: calc($font-size-base - 3px);
+  font-weight: $font-weight-normal;
+  transition: border 0.3s ease-in-out;
+  &:focus {
+    border: 2px solid $main-red-color;
+  }
+}
+.img-border {
+  border: 4px solid map-get($white-color, image-border);
+}
+.active-nav-link {
+  color: $active-nav-links-color;
+  font-size: calc($font-size-base + 1px);
+  font-family: $font-primary;
+  font-weight: calc($font-weight-bold - 100);
+  padding: 10px 0px;
+  width: fit-content;
+  position: relative;
+  text-transform: capitalize;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $main-red-color;
+  }
+}
+.logo-text{
+    color: map-get($eerie-black-color, logo);
+    font-size: $font-size-logo;
+    font-family: $font-primary;
+    font-weight: $font-weight-bold;
+    &::after{
+        content: ".";
+        color: $main-red-color;
+    }
+}
+.nav-link {
+  color: map-get($taupe-gray-color, nav-links);
+  font-size: calc($font-size-base + 1px);
+  font-family: $font-primary;
+  font-weight: calc($font-weight-bold - 100);
+  padding: 10px 0px;
+  width: fit-content;
+  position: relative;
+  text-transform: capitalize;
+  &:hover {
+    color: $active-nav-links-color;
+    &::before {
+      content: "";
+      position: absolute;
+      height: 2px;
+      animation: nav-bottom-line 1s forwards;
+      bottom: 0;
+      background-color: $main-red-color;
+    }
+  }
+}
+
+.img-hero {
+  width: 100%;
+  position: relative;
+  &:hover {
+    animation: vibrate 0.5s infinite forwards;
+  }
+}
+
+@keyframes vibrate {
+  0% {
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  20% {
+    top: 0;
+    left: 0;
+    right: 5px;
+  }
+  40% {
+    top: 5px;
+    left: 5px;
+    right: 0;
+  }
+  60% {
+    top: 0px;
+    left: 0;
+    right: 5px;
+    transform: rotate(3deg);
+  }
+  80% {
+    top: 0px;
+    left: 5px;
+    right: 0;
+  }
+  100% {
+    top: 5px;
+    left: 0;
+    right: 5px;
+  }
+}
+
+@keyframes nav-bottom-line {
+  from {
+    left: 0;
+    right: 100%;
+  }
+  to {
+    left: 0;
+    right: 0;
+  }
+}

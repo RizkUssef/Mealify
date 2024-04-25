@@ -1,0 +1,186 @@
+@import "../abstracts/variables";
+@import "../base/typography";
+@import "../abstracts/mixins";
+
+.footer {
+  background-image: url(../../img/textured-metal-background.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 50px 0px;
+  .footer-contant {
+    @include flex(column);
+    gap: 20px;
+    .all-text-desc {
+      color: map-get($white-color, white);
+    }
+    .first {
+      @include flex(column, flex-start, flex-start);
+      gap: 20px;
+      .logo {
+        @include flex();
+        gap: 20px;
+        .img {
+          width: 40px;
+        }
+        .logo-text {
+          color: map-get($white-color, white);
+        }
+      }
+      .social-media {
+        width: 100%;
+        text-align: center;
+        .footer-line {
+          height: 2px;
+          margin: 20px 0px;
+          background-color: $footer-line;
+        }
+        .social-links {
+          @include flex(row, space-evenly);
+          color: #fff;
+          font-size: $font-size-header-icon;
+        }
+      }
+    }
+    .second {
+      @include flex(column);
+      gap: 20px;
+      .subscribe-info {
+        .footer-title {
+          margin-bottom: 15px;
+        }
+      }
+      .form {
+        width: 100%;
+        form {
+          @include flex(column);
+          gap: 20px;
+          .subscribe-button {
+            width: 100%;
+            i {
+              margin-right: 5px;
+            }
+          }
+          input {
+            width: 100%;
+            padding: 10px;
+          }
+        }
+      }
+      .quick-links {
+        width: 100%;
+        @include flex(column, flex-start, flex-start);
+        gap: 20px;
+        color: #fff;
+        .quick-list-links {
+          @include flex();
+          column-gap: 20px;
+          flex-wrap: wrap;
+          width: 100%;
+          .ele {
+            flex-basis: 40%;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-flow: row;
+            padding: 8px;
+            transition: all 0.5s ease-in-out;
+            &:hover {
+              margin-left: 20px;
+              background-color: #222222;
+            }
+            i {
+              font-size: $font-size-small;
+              margin-right: 8px;
+            }
+          }
+        }
+      }
+    }
+    .thired {
+      align-self: start;
+      .footer-title {
+        margin-bottom: 20px;
+      }
+      ul {
+        @include flex(column, flex-start, flex-start);
+        gap: 20px;
+        .ele {
+          @include flex(row, flex-start);
+          i {
+            margin-right: 10px;
+            color: $main-red-color;
+            font-size: $font-size-meal-name;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-xl) {
+  .footer {
+    .footer-contant{
+        @include flex(row);
+        flex-wrap: wrap;
+        gap: 20px;
+        .first{
+            order: 1;
+            flex-basis: 45%;
+        }
+        .second{
+            order: 3;
+            flex-basis: 100%;
+            .form {
+                width: 100%;
+                form {
+                  @include flex(row ,space-between);
+                  gap: 5px;
+                  .subscribe-button {
+                    flex-basis: 20%;
+                    border: 2px solid $main-red-color;
+                  }
+                  input {
+                    flex-basis: 80%;
+                  }
+                }
+              }
+        }
+        .thired{
+            padding-top: 10px;
+            order: 2;
+            flex-basis: 45%;
+        }
+    }
+  }
+}
+@media screen and (min-width: $breakpoint-xl-plus) and (max-width: $breakpoint-xxl) {
+    .footer {
+        .footer-contant{
+            @include flex(row,space-between,flex-start);
+            flex-wrap: wrap;
+            gap: 20px;
+            .first{
+                flex-basis: 20%;
+            }
+            .second{
+                flex-basis: 54%;
+                .form {
+                    width: 100%;
+                    form {
+                      @include flex(row ,space-between);
+                      gap: 5px;
+                      .subscribe-button {
+                        flex-basis: 25%;
+                        border: 2px solid $main-red-color;
+                      }
+                      input {
+                        flex-basis: 75%;
+                      }
+                    }
+                  }
+            }
+            .thired{
+                flex-basis: 18%;
+            }
+        }
+      }
+}

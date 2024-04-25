@@ -1,0 +1,377 @@
+@import "../abstracts/variables";
+@import "../base/typography";
+@import "../abstracts/mixins";
+
+.main {
+  background-color: $main-bg;
+  padding: 120px 0px 50px 0px;
+  .main-contant {
+    @include flex(column);
+    gap: 20px;
+    .img-hero {
+      order: -1;
+    }
+    .text {
+      order: 1;
+      @include flex(column);
+      gap: 20px;
+      text-align: center;
+      .all-text-desc {
+        color: $main-description-color;
+      }
+      .main-btns {
+        @include flex();
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+    }
+  }
+}
+.chefs {
+  padding: 50px 10px;
+  .chefs-contant {
+    width: 100%;
+    .all-chef {
+      width: 100%;
+      margin-top: 50px;
+      @include flex(column);
+      gap: 30px;
+      .chef {
+        width: 100%;
+        background-color: map-get($white-color, white);
+        box-shadow: 0 0 10px 10px rgba($color: #000000, $alpha: 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          transform: scale(1.07);
+        }
+        .text {
+          text-align: center;
+          @include flex(column);
+          gap: 10px;
+          padding: 20px 13px;
+          .italic {
+            font-style: italic;
+          }
+        }
+        .img {
+          width: 100%;
+          position: relative;
+          &::after {
+            content: url("../../img/wave2.svg");
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+    .chefs-contant {
+      .all-chef {
+        @include flex(row, space-between);
+        gap: 20px;
+        flex-wrap: wrap;
+        .chef {
+          flex-basis: 48%;
+        }
+      }
+    }
+  }
+}
+.gallery {
+  background-color: $main-bg;
+  padding: 50px 0px;
+  .gallery-contant {
+    .gallery-images {
+      margin-top: 20px;
+      @include flex(column);
+      gap: 20px;
+      .img {
+        position: relative;
+        transition: top 0.5s ease-in-out;
+        .layout {
+          transition: top 0.5s ease-in-out;
+          background-color: rgba($color: #000000, $alpha: 0.6);
+          text-align: center;
+          @include flex(column);
+          gap: 20px;
+          padding: 0px 20px;
+          position: absolute;
+          display: none;
+          top: 100%;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 10;
+          .all-text-desc {
+            color: $meal-description-color;
+            font-size: $font-size-small;
+          }
+        }
+        &:hover {
+          .layout {
+            top: 0;
+            display: flex;
+          }
+        }
+      }
+      @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+        height: 250vh;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .img {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+.contact {
+  padding: 50px 0px;
+  .contact-contant {
+    .contact-details {
+      @include flex(column);
+      gap: 20px;
+      margin-top: 20px;
+      .contact-map {
+        height: 50vh;
+        width: 100%;
+      }
+      .contact-back {
+        @include flex(column);
+        gap: 20px;
+        .back {
+          @include flex(row);
+          gap: 20px;
+          background-color: $contact-bg;
+          padding: 25px;
+          width: 100%;
+          .text {
+            @include flex(column, flex-start, flex-start);
+            gap: 10px;
+            flex-basis: 90%;
+          }
+          i {
+            padding: 15px;
+            background-color: $main-red-color;
+            color: map-get($white-color, white);
+            border-radius: 50%;
+          }
+        }
+        @media screen and (min-width: $breakpoint-md) and (max-width: $breakpoint-lg) {
+          @include flex(row, space-between);
+          flex-wrap: wrap;
+          .back {
+            width: 48%;
+          }
+        }
+      }
+      .contact-form {
+        background-color: map-get($white-color, white);
+        box-shadow: 0 0 15px 5px rgba($color: #000000, $alpha: 0.1);
+        padding: 20px;
+        width: 100%;
+        .from {
+          width: 100%;
+          @include flex(column);
+          gap: 20px;
+          .name-email {
+            width: 100%;
+            @include flex(column);
+            gap: 20px;
+          }
+          input,
+          textarea {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $breakpoint-lg-plus) and (max-width: $breakpoint-xl) {
+  .main {
+    .main-contant {
+      @include flex(row, space-between);
+      .img-hero {
+        order: 1;
+        flex-basis: 40%;
+      }
+      .text {
+        flex-basis: 50%;
+        text-align: start;
+        align-items: flex-start;
+        order: -1;
+      }
+    }
+  }
+  .chefs {
+    .chefs-contant {
+      .all-chef {
+        @include flex(row, space-between);
+        gap: 20px;
+        .chef {
+          flex-basis: 33%;
+        }
+      }
+    }
+  }
+  .gallery {
+    .gallery-contant {
+      .gallery-images {
+        height: 130vh;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .img {
+          width: 30%;
+        }
+        .order-1 {
+          order: 1;
+        }
+        .order-2 {
+          order: 2;
+        }
+        .order-3 {
+          order: 3;
+        }
+        .order-4 {
+          order: 4;
+        }
+        .order-5 {
+          order: 5;
+        }
+        .order-6 {
+          order: 6;
+        }
+        .order-7 {
+          order: 7;
+        }
+      }
+    }
+  }
+  .contact {
+    .contact-contant {
+      .contact-details {
+        .contact-back {
+          @include flex(row, space-between);
+          flex-wrap: wrap;
+          .back {
+            width: 48%;
+          }
+        }
+        .contact-form {
+          .from {
+            .name-email {
+              @include flex(row, space-between);
+              flex-wrap: wrap;
+              gap: 0px;
+
+              .name {
+                flex-basis: 49%;
+              }
+              .email {
+                flex-basis: 49%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: $breakpoint-xl-plus) and (max-width: $breakpoint-xxl) {
+  .main {
+    padding-top: 10%;
+    height: 100vh;
+    .main-contant {
+      @include flex(row, space-between);
+      .img-hero {
+        order: 1;
+        flex-basis: 42%;
+      }
+      .text {
+        flex-basis: 40%;
+        text-align: start;
+        align-items: flex-start;
+        order: -1;
+      }
+    }
+  }
+  .chefs {
+    .chefs-contant {
+      .all-chef {
+        @include flex(row, space-between);
+        gap: 20px;
+        .chef {
+          flex-basis: 33%;
+        }
+      }
+    }
+  }
+  .gallery {
+    .gallery-contant {
+      .gallery-images {
+        height: 150vh;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .img {
+          width: 30%;
+        }
+        .order-1 {
+          order: 1;
+        }
+        .order-2 {
+          order: 2;
+        }
+        .order-3 {
+          order: 3;
+        }
+        .order-4 {
+          order: 4;
+        }
+        .order-5 {
+          order: 5;
+        }
+        .order-6 {
+          order: 6;
+        }
+        .order-7 {
+          order: 7;
+        }
+      }
+    }
+  }
+  .contact {
+    .contact-contant {
+      .contact-details {
+        .contact-back {
+          @include flex(row, space-between);
+          flex-wrap: wrap;
+          .back {
+            width: 49%;
+          }
+        }
+        .contact-form {
+          .from {
+            .name-email {
+              @include flex(row, space-between);
+              flex-wrap: wrap;
+              gap: 0px;
+              .name {
+                flex-basis: 49%;
+              }
+              .email {
+                flex-basis: 49%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
