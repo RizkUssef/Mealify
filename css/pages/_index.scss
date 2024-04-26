@@ -194,7 +194,7 @@
   }
 }
 
-@media screen and (min-width: $breakpoint-lg-plus) and (max-width: $breakpoint-xl) {
+@media screen and (min-width: $breakpoint-lg-plus)  {
   .main {
     .main-contant {
       @include flex(row, space-between);
@@ -284,32 +284,16 @@
     }
   }
 }
-@media screen and (min-width: $breakpoint-xl-plus) and (max-width: $breakpoint-xxl) {
+@media screen and (min-width: $breakpoint-xl-plus) {
   .main {
     padding-top: 10%;
     height: 100vh;
     .main-contant {
-      @include flex(row, space-between);
       .img-hero {
-        order: 1;
         flex-basis: 42%;
       }
       .text {
         flex-basis: 40%;
-        text-align: start;
-        align-items: flex-start;
-        order: -1;
-      }
-    }
-  }
-  .chefs {
-    .chefs-contant {
-      .all-chef {
-        @include flex(row, space-between);
-        gap: 20px;
-        .chef {
-          flex-basis: 33%;
-        }
       }
     }
   }
@@ -317,60 +301,6 @@
     .gallery-contant {
       .gallery-images {
         height: 150vh;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-        .img {
-          width: 30%;
-        }
-        .order-1 {
-          order: 1;
-        }
-        .order-2 {
-          order: 2;
-        }
-        .order-3 {
-          order: 3;
-        }
-        .order-4 {
-          order: 4;
-        }
-        .order-5 {
-          order: 5;
-        }
-        .order-6 {
-          order: 6;
-        }
-        .order-7 {
-          order: 7;
-        }
-      }
-    }
-  }
-  .contact {
-    .contact-contant {
-      .contact-details {
-        .contact-back {
-          @include flex(row, space-between);
-          flex-wrap: wrap;
-          .back {
-            width: 49%;
-          }
-        }
-        .contact-form {
-          .from {
-            .name-email {
-              @include flex(row, space-between);
-              flex-wrap: wrap;
-              gap: 0px;
-              .name {
-                flex-basis: 49%;
-              }
-              .email {
-                flex-basis: 49%;
-              }
-            }
-          }
-        }
       }
     }
   }

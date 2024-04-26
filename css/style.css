@@ -960,7 +960,7 @@ textarea:focus {
   width: 100%;
 }
 
-@media screen and (min-width: 993px) and (max-width: 1200px) {
+@media screen and (min-width: 993px) {
   .main .main-contant {
     display: flex;
     flex-direction: row;
@@ -1041,88 +1041,18 @@ textarea:focus {
     flex-basis: 49%;
   }
 }
-@media screen and (min-width: 1201px) and (max-width: 2000px) {
+@media screen and (min-width: 1201px) {
   .main {
     padding-top: 10%;
     height: 100vh;
   }
-  .main .main-contant {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
   .main .main-contant .img-hero {
-    order: 1;
     flex-basis: 42%;
   }
   .main .main-contant .text {
     flex-basis: 40%;
-    text-align: start;
-    align-items: flex-start;
-    order: -1;
-  }
-  .chefs .chefs-contant .all-chef {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-  }
-  .chefs .chefs-contant .all-chef .chef {
-    flex-basis: 33%;
   }
   .gallery .gallery-contant .gallery-images {
     height: 150vh;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-  .gallery .gallery-contant .gallery-images .img {
-    width: 30%;
-  }
-  .gallery .gallery-contant .gallery-images .order-1 {
-    order: 1;
-  }
-  .gallery .gallery-contant .gallery-images .order-2 {
-    order: 2;
-  }
-  .gallery .gallery-contant .gallery-images .order-3 {
-    order: 3;
-  }
-  .gallery .gallery-contant .gallery-images .order-4 {
-    order: 4;
-  }
-  .gallery .gallery-contant .gallery-images .order-5 {
-    order: 5;
-  }
-  .gallery .gallery-contant .gallery-images .order-6 {
-    order: 6;
-  }
-  .gallery .gallery-contant .gallery-images .order-7 {
-    order: 7;
-  }
-  .contact .contact-contant .contact-details .contact-back {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .contact .contact-contant .contact-details .contact-back .back {
-    width: 49%;
-  }
-  .contact .contact-contant .contact-details .contact-form .from .name-email {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0px;
-  }
-  .contact .contact-contant .contact-details .contact-form .from .name-email .name {
-    flex-basis: 49%;
-  }
-  .contact .contact-contant .contact-details .contact-form .from .name-email .email {
-    flex-basis: 49%;
   }
 }/*# sourceMappingURL=style.css.map */
